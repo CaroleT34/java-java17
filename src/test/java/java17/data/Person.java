@@ -2,7 +2,13 @@ package java17.data;
 
 public class Person {
 
-    private String firstname;
+    @Override
+	public String toString() {
+		return "Person [firstname=" + firstname + ", lastname=" + lastname + ", age=" + age + ", password=" + password
+				+ "]";
+	}
+
+	private String firstname;
     private String lastname;
     private Integer age;
     private String password;
