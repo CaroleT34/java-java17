@@ -3,6 +3,8 @@ package java8.ex08;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -60,6 +62,14 @@ public class Stream_08_Test {
 
         public void setNombre(Integer nombre) {
             this.nombre = nombre;
+        }
+    }
+    
+    public static URI getResource(){
+        try {
+            return ClassLoader.getSystemResource(NAISSANCES_DEPUIS_1900_CSV).toURI();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException("Fichier "+NAISSANCES_DEPUIS_1900_CSV+" non trouvé.");
         }
     }
 
